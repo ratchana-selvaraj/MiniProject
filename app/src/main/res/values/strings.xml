@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MiniProject</string>
+    <string name="enroll_here">CUSTOMER ENROLLMENT</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="add">Address</string>
+    <string name="city">City</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="btn">Save</string>
+    <string name="phn">Phone Number</string>
+    <string name="email">Email ID</string>
+</resources>
