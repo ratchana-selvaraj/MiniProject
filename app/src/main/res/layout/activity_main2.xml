@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:divider="?android:dividerHorizontal"
+        android:background="@color/tcolor"
+        android:showDividers="end"
+        android:id="@+id/ll1">
+
+        <TextView
+            android:id="@+id/atxt1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textColor="@color/White"
+            android:text="TextView" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"/>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/profile" />
+
+    </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardview"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="250dp"
+        android:layout_below="@+id/ll1">
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/ll2">
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/btcolor"
+                android:textStyle="bold"
+                android:text="Dr.Abhinav Arora MBBS.MD." />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_marginLeft="10dp"
+                android:text="Dr. Abhinav has been published in both the Journal of the American Podiatric Medical Association and the New England Journal of Medicine. He holds a medical degree from the Medical University of South Carolina, where he completed a postdoctoral fellowship in the field of orthopedic medicine." />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll2">
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="158dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="4"
+                    android:layout_column="0"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/button"
+                    android:text="view website"
+                    android:textColor="@color/White" />
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="4"
+                    android:layout_column="2"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/button"
+                    android:text="  REQUEST  "
+                    android:textColor="@color/White" />
+
+            </GridLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="250dp"
+        android:layout_below="@+id/cardview">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/ll3">
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textColor="@color/btcolor"
+                android:textStyle="bold"
+                android:text="Dr.Shankar MBBS." />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_marginLeft="10dp"
+                android:text="Dr. Shankar has been published in both the Journal of the American Podiatric Medical Association and the New England Journal of Medicine.." />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll2">
+
+                <Button
+                    android:id="@+id/button1"
+                    android:layout_width="158dp"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/button"
+                    android:text="view website"
+                    android:textColor="@color/White" />
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/button"
+                    android:text="  REQUEST  "
+                    android:textColor="@color/White" />
+
+            </GridLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
