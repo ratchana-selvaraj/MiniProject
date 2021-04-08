@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity2">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="199dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/regdoc" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:textColor="@color/tcolor"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:layout_below="@+id/img"/>
+
+            <EditText
+                android:id="@+id/etext1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:inputType="textPersonName"
+                android:hint="Name"
+                android:layout_below="@+id/text1"/>
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:textColor="@color/tcolor"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                android:layout_below="@+id/etext1"/>
+
+            <EditText
+                android:id="@+id/etext2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:inputType="textPersonName"
+                android:hint="Age"
+                android:layout_below="@+id/text2"/>
+            <TextView
+                android:id="@+id/text3"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:textColor="@color/tcolor"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Qualification"
+                android:layout_below="@+id/img"/>
+
+            <EditText
+                android:id="@+id/etext3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:inputType="textPersonName"
+                android:hint="Qualification"
+                android:layout_below="@+id/text1"/>
+            <TextView
+                android:id="@+id/text4"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:textColor="@color/tcolor"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Year Of Experience"
+                android:layout_below="@+id/img"/>
+
+            <EditText
+                android:id="@+id/etext4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:inputType="textPersonName"
+                android:hint="YearOf Experience"
+                android:layout_below="@+id/text1"/>
+            <TextView
+                android:id="@+id/text5"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:textColor="@color/tcolor"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maintaining Own Clinic?"
+                android:layout_below="@+id/img"/>
+            <RadioButton
+                android:id="@+id/rbtn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etext2"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Yes"
+                android:textColor="@color/tcolor"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+            <RadioButton
+                android:id="@+id/rbtn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etext2"
+                android:layout_marginLeft="160dp"
+                android:layout_marginTop="-29dp"
+                android:text="No"
+                android:textColor="@color/tcolor"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:textColor="@color/tcolor"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WorkPlace"
+                android:layout_below="@+id/rbtn1"/>
+
+            <EditText
+                android:id="@+id/etext6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:inputType="textPersonName"
+                android:hint="WorkPlace"
+                android:layout_below="@+id/text3"/>
+            <TextView
+                android:id="@+id/text7"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:textColor="@color/tcolor"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="city"
+                android:layout_below="@+id/etext3"/>
+            <EditText
+                android:id="@+id/etext7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:inputType="textPersonName"
+                android:hint="City"
+                android:layout_below="@+id/text4"/>
+            <TextView
+                android:id="@+id/text8"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:textColor="@color/tcolor"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phn"
+                android:layout_below="@+id/etext4"/>
+            <EditText
+                android:id="@+id/etext8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:inputType="textPersonName"
+                android:hint="Phone Number"
+                android:layout_below="@+id/text5"/>
+            <TextView
+                android:id="@+id/text9"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="20dp"
+                android:textColor="@color/tcolor"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:layout_below="@+id/etext5"/>
+            <EditText
+                android:id="@+id/etext9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:inputType="textPersonName"
+                android:hint="email@gmail.com"
+                android:layout_below="@+id/text6"/>
+
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:textStyle="bold"
+                android:textColor="@color/White"
+                android:background="@drawable/button"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/etext6"/>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
