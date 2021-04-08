@@ -41,6 +41,7 @@ public class BottomModel extends BottomSheetDialogFragment {
     public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
     private final static String default_notification_channel_id = "default" ;
     public void notification(){
+
         //Uri sound = Uri. parse (ContentResolver. SCHEME_ANDROID_RESOURCE + "://" + this.getContext().getPackageName() + "/raw/quite_impressed.mp3" ) ;
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this.getContext(),
                 default_notification_channel_id )
