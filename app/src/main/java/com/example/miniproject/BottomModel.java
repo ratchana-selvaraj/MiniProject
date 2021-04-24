@@ -30,6 +30,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.Calendar;
 
@@ -38,6 +39,7 @@ import static com.example.miniproject.NotificationHelper.CHANNEL_1_ID;
 public class BottomModel extends BottomSheetDialogFragment {
     String name ;
     String cause;
+    TextInputLayout  et,eet,e_dd,e_tt;
     public static final String NOTIFICATION_CHANNEL_ID = "10001" ;
     private final static String default_notification_channel_id = "default" ;
     public void notification(){
@@ -75,8 +77,8 @@ public class BottomModel extends BottomSheetDialogFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        final View  v = inflater.inflate(R.layout.bottom_layout,container,false);
         Button btn = v.findViewById(R.id.send);
-        final EditText e_dd = v.findViewById(R.id.pt_date);
-        final EditText e_tt = v.findViewById(R.id.pt_time);
+        e_dd = v.findViewById(R.id.date);
+        e_tt = v.findViewById(R.id.time);
         e_dd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,7 +90,7 @@ public class BottomModel extends BottomSheetDialogFragment {
                         new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int yy, int mm, int d) {
-                        e_dd.setText(d+"-"+mm+"-"+"-"+yy);
+                        e_dd.getEditText().setText(d+"-"+mm+"-"+yy);
                     }
                 },c_dd,c_mm,c_yy);
                 datepicker.show();
@@ -104,7 +106,7 @@ public class BottomModel extends BottomSheetDialogFragment {
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
                             public void onTimeSet(TimePicker timePicker, int h, int m) {
-                                e_tt.setText(h+":"+m);
+                                e_tt.getEditText().setText(h+":"+m);
                             }
                         },hh,mm,false);
                 timePickerDialog.show();
@@ -113,23 +115,14 @@ public class BottomModel extends BottomSheetDialogFragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText et = (EditText)view.findViewById(R.id.pt_name);
-                name = et.getText().toString();
-                EditText eet = (EditText)view.findViewById(R.id.pt_desc);
-                cause = eet.getText().toString();
-                String date_picker = e_dd.getText().toString();
-                String time_picker = e_tt.getText().toString();
+                et =  view.findViewById(R.id.p_name);
+                name = et.getEditText().getText().toString();
+                eet = view.findViewById(R.id.p_cause);
+                cause = eet.getEditText().getText().toString();
+                String date_picker = e_dd.getEditText().getText().toString();
+                String time_picker = e_tt.getEditText().getText().toString();
                 Log.i("SMS starts","started");
-                Intent smsIntent = new Intent(Intent.ACTION_VIEW);
-                smsIntent.setData(Uri.parse("smsto:"));
-                smsIntent.setType("vnd.android-dir/mms-sms");
-                smsIntent.putExtra("Phonenumber",new String("6385908105"));
-                smsIntent.putExtra("name",name);
-                smsIntent.putExtra("cause",cause);
-                smsIntent.putExtra("date",date_picker);
-                smsIntent.putExtra("time",time_picker);
                 try{
-                    startActivity(smsIntent);
                     notification();
                     Log.i("Done","");
 

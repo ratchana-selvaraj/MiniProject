@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,62 +12,80 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/logview">
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="wrap_content"
-        android:layout_height="101dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        app:srcCompat="@drawable/logo" />
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_gravity="center"
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="101dp"
+                android:layout_marginTop="20dp"
+                app:srcCompat="@drawable/logo" />
             <TextView
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/img"
-                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:typeface="serif"
                 android:text="TELEMEDICINE "
                 android:textColor="@color/tcolor"
                 android:textSize="20dp"
                 android:textStyle="bold"/>
-            <EditText
-                android:id="@+id/etext1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/text"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
-                android:ems="10"
-                android:hint="username"
-                android:inputType="textPersonName" />
-            <EditText
-                android:id="@+id/etext2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/etext1"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="5dp"
-                android:ems="10"
-                android:hint="password"
-                android:inputType="textPersonName" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/username"
+            android:textColorHint="@color/gray"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/password"
+            app:passwordToggleEnabled="true"
 
-    <LinearLayout
-        android:layout_below="@+id/etext2"
-        android:id="@+id/ll4"
-        android:layout_centerHorizontal="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
+            android:textColorHint="@color/gray"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+            <RadioButton
             android:layout_below="@+id/etext2"
             android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/tcolor"
             android:textSize="20dp"
-            android:text="Patient"
+            android:text="Patient" android:fontFamily="sans-serif"
             android:textStyle="bold"/>
         <RadioButton
             android:layout_below="@+id/radioButton1"
@@ -78,43 +95,39 @@
             android:textColor="@color/tcolor"
             android:textSize="20dp"
             android:text="Doctor  "
+            android:fontFamily="sans-serif"
             android:textStyle="bold"/>
-    </LinearLayout>
-
-
-
-            <Button
-                android:id="@+id/button1"
+                </RadioGroup>
+            </LinearLayout>
+        <Button
+                android:id="@+id/login"
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/ll4"
-                android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
-                android:background="@drawable/button"
+                android:backgroundTint="@color/gray"
                 android:text="LOGIN"
                 android:textColor="@color/White"/>
-    <TextView
-        android:id="@+id/etext3"
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center_horizontal"
+                   android:textColor="@color/black"
+                   android:text="@string/or"
+                   android:fontFamily="sans-serif"
+                   android:textSize="18dp"
+                   />
+        <Button
+        android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/gray"
         android:layout_marginTop="5dp"
-        android:textAlignment="center"
-        android:hint="or"
-        android:textSize="20dp" />
-
-
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/etext3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/button"
         android:textColor="@color/White"
         android:text="Register" />
+
+        </LinearLayout>
+        </ScrollView>
     </RelativeLayout>
 </RelativeLayout>

@@ -1,38 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-    <EditText
-        android:layout_gravity="center"
-        android:id="@+id/pt_name"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/p_name"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter the name" />
-    <EditText
-        android:layout_gravity="center"
-        android:id="@+id/pt_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Cause for consultation" />
+        android:hint="@string/name"
+        android:textColorHint="@color/gray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <EditText
-        android:layout_gravity="center"
-        android:id="@+id/pt_time"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Time" />
-    <EditText
-        android:layout_gravity="center"
-        android:id="@+id/pt_date"
-        android:layout_width="wrap_content"
+        android:textColor="@color/black"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/p_cause"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Date" />
+        android:hint="@string/name"
+        android:textColorHint="@color/gray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name"
+        app:startIconDrawable="@drawable/ic_clock_svgrepo_com"
+        android:textColorHint="@color/gray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name"
+        app:startIconDrawable="@drawable/ic_monthly_calendar_svgrepo_com"
+        android:textColorHint="@color/gray"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
     <Button
-        android:layout_gravity="center"
+        android:backgroundTint="#A9A9A9"
         android:id="@+id/send"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:text="SEND" />
 
 

@@ -2,11 +2,13 @@ package com.example.miniproject;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -21,12 +23,11 @@ public class MainActivity2 extends AppCompatActivity implements PopupMenu.OnMenu
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        TextView tt = (TextView)findViewById(R.id.atxt1);
         Button bt = (Button)findViewById(R.id.button);
         Button bt2 = (Button)findViewById(R.id.button2);
+        Button btn = (Button)findViewById(R.id.more);
         Intent intent = getIntent();
         String st = (String)intent.getSerializableExtra("res");
-        tt.setText(st);
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +46,15 @@ public class MainActivity2 extends AppCompatActivity implements PopupMenu.OnMenu
             popupMenu.show();
         }
     });
+    btn.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            PopupMenu popupMenu = new PopupMenu(MainActivity2.this,view);
+            popupMenu.setOnMenuItemClickListener(MainActivity2.this);
+            popupMenu.inflate(R.menu.option_menu);
+            popupMenu.show();
+        }
+    });
     }
     @Override
     public boolean onMenuItemClick(MenuItem menuItem) {
@@ -56,6 +66,15 @@ public class MainActivity2 extends AppCompatActivity implements PopupMenu.OnMenu
                 break;
             case R.id.mail:
                 Toast.makeText(getApplicationContext()," redirecting to mail",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.Notification:
+                new  notification_fragment();
+                break;
+            case R.id.Payment:
+                new payment_fragment();
+                break;
+            case R.id.Profile:
+                new  profile_fragment();
                 break;
         }
         return false;

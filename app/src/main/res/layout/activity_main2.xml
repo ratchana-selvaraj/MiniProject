@@ -5,98 +5,97 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
-    <LinearLayout
+
+    <ScrollView
+        android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:orientation="horizontal"
-        android:divider="?android:dividerHorizontal"
-        android:background="@color/tcolor"
-        android:showDividers="end"
-        android:id="@+id/ll1">
+        android:layout_height="wrap_content">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp">
 
-        <TextView
-            android:id="@+id/atxt1"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:textSize="25dp"
-            android:textColor="@color/White"
-            android:text="TextView" />
-
-        <Space
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="5"/>
+            android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            app:srcCompat="@drawable/profile" />
+            <!-- Media -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="194dp"
+                app:srcCompat="@drawable/levo"
+                android:scaleType="centerCrop"
+                android:contentDescription="content_description_media"
+                />
 
-    </LinearLayout>
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardview"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_height="250dp"
-        android:layout_below="@+id/ll1">
             <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:id="@+id/ll2">
-            <TextView
-                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Title, secondary and supporting text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="title"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="secondary_text"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="supporting_text"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary"
+                    />
+
+            </LinearLayout>
+
+            <!-- Buttons -->
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textSize="20dp"
-                android:textColor="@color/btcolor"
-                android:textStyle="bold"
-                android:text="Dr.Abhinav Arora MBBS.MD." />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18dp"
-                android:layout_marginLeft="10dp"
-                android:text="Dr. Abhinav has been published in both the Journal of the American Podiatric Medical Association and the New England Journal of Medicine. He holds a medical degree from the Medical University of South Carolina, where he completed a postdoctoral fellowship in the field of orthopedic medicine." />
-
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/ll2">
-
-                <Button
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button"
-                    android:layout_width="158dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_row="4"
-                    android:layout_column="0"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/button"
-                    android:text="view website"
-                    android:textColor="@color/White" />
-
-                <Button
+                    android:layout_marginEnd="8dp"
+                    android:text="View website"
+                    style="?attr/borderlessButtonStyle"
+                    />
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_row="4"
-                    android:layout_column="2"
-                    android:layout_marginRight="20dp"
-                    android:background="@drawable/button"
-                    android:text="  REQUEST  "
-                    android:textColor="@color/White" />
+                    android:text="Request"
+                    style="?attr/borderlessButtonStyle"
+                    />
+            </LinearLayout>
 
-            </GridLayout>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+
+    </com.google.android.material.card.MaterialCardView>
+    </ScrollView>
+    <Button
+        android:id="@+id/more"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_action_name"
+        android:backgroundTint="@color/peach"/>
 </RelativeLayout>
