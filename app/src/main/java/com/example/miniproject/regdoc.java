@@ -13,8 +13,9 @@ import java.util.Objects;
 
 public class regdoc extends AppCompatActivity {
     FirebaseDatabase rootnode;
-    TextInputLayout docname,docphn,docuname,docpass,docmail;
-    DatabaseReference reference ;
+    TextInputLayout docname, docphn, docuname, docpass, docmail;
+    DatabaseReference reference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +25,7 @@ public class regdoc extends AppCompatActivity {
         docuname = findViewById(R.id.dusername);
         docpass = findViewById(R.id.dpassword);
         docmail = findViewById(R.id.dmail);
-        Button bt = (Button)findViewById(R.id.dbutton);
+        Button bt = (Button) findViewById(R.id.dbutton);
         rootnode = FirebaseDatabase.getInstance();
         reference = rootnode.getReference("DocterRegister");
         bt.setOnClickListener(new View.OnClickListener() {
@@ -35,13 +36,12 @@ public class regdoc extends AppCompatActivity {
                 String mail = Objects.requireNonNull(docmail.getEditText()).getText().toString();
                 String username = Objects.requireNonNull(docuname.getEditText()).getText().toString();
                 String password = Objects.requireNonNull(docpass.getEditText()).getText().toString();
-                if (name.isEmpty() && phn.isEmpty() && mail.isEmpty() && username.isEmpty() && password.isEmpty()){
-                    Toast.makeText(regdoc.this,"You are missing out certain fields,Please fill out",Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    RegisterHelper helper = new RegisterHelper(name,phn,mail,username,password);
+                if (name.isEmpty() && phn.isEmpty() && mail.isEmpty() && username.isEmpty() && password.isEmpty()) {
+                    Toast.makeText(regdoc.this, "You are missing out certain fields,Please fill out", Toast.LENGTH_SHORT).show();
+                } else {
+                    RegisterHelper helper = new RegisterHelper(name, phn, mail, username, password);
                     reference.child(phn).setValue(helper);
-                    Intent i = new Intent(regdoc.this,MainActivity.class);
+                    Intent i = new Intent(regdoc.this, MainActivity.class);
                     startActivity(i);
                 }
 

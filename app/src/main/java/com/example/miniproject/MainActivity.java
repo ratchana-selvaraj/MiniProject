@@ -23,7 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     TextInputLayout username,password;
-    String path = "PatientRegister";
+    String phn_number,name,path = "PatientRegister";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,17 +106,20 @@ public class MainActivity extends AppCompatActivity {
     private void isUser(){
         final String userEnteredUsername = username.getEditText().getText().toString().trim();
         final String userEnteredPassword = password.getEditText().getText().toString().trim();
-
+        name = userEnteredUsername;
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference(path);
         Query checkUser = reference.orderByChild("username").equalTo(userEnteredUsername);
         checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
+
                     username.setError(null);
                     username.setErrorEnabled(false);
                     String passwordFromDB = userEnteredUsername;
+
                 if (passwordFromDB!= null && passwordFromDB.equals(userEnteredPassword)){
+                    phn_number = snapshot.child(userEnteredUsername).child("phn").getValue(String.class);
                     username.setError(null);
                     username.setErrorEnabled(false);
                     if(path.equals("PatientRegister")){
@@ -142,5 +146,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+    public  String getphn(){
+        return phn_number;
+    }
+    public String getname(){
+        return  name;
     }
 }
